@@ -1,14 +1,6 @@
 "use client";
 
 import axios from "axios";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 import { useEffect, useState, useRef } from "react";
 import { toPng } from "html-to-image";
 import dayjs from "dayjs";
@@ -28,7 +20,7 @@ export default function ReportComponent() {
             Authorization: `Bearer ${token}`,
           },
         });
-        setReport(response.data); // Assuming the data comes as an array
+        setReport(response.data || []);
         setLoading(false);
       } catch (err) {
         setError(err.response?.data?.message || "Failed to fetch report data.");
@@ -65,53 +57,61 @@ export default function ReportComponent() {
 
   return (
     <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center">
-      <div ref={resultRef} className="bg-white p-4">
+      <div ref={resultRef} className="w-full bg-white p-4">
         <h1 className="mb-4 text-center text-xl font-bold uppercase md:text-2xl">
           HealthyMind Respati Report
         </h1>
-        <Table>
-          <TableHeader className="bg-gray-200">
-            <TableRow>
-              <TableHead className="w-[100px] text-center text-black">
-                No
-              </TableHead>
-              <TableHead className="w-[150px] text-center text-black">
-                Tanggal
-              </TableHead>
-              <TableHead className="text-center text-black">Semester</TableHead>
-              <TableHead className="text-center text-black">Skor</TableHead>
-              <TableHead className="text-center text-black">Hasil</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {report?.length > 0 ? (
-              report.map((item, index) => (
-                <TableRow
-                  key={index}
-                  className={
-                    item.score > 50
-                      ? "bg-green-100 text-left"
-                      : "bg-red-100 text-left"
-                  }
-                >
-                  <TableCell className="font-medium">{index + 1}</TableCell>
-                  <TableCell>
-                    {dayjs(item.createdAt).format("YYYY-MM-DD")}
-                  </TableCell>
-                  <TableCell>{item.semester}</TableCell>
-                  <TableCell>{item.score}</TableCell>
-                  <TableCell>{item.message}</TableCell>
-                </TableRow>
-              ))
-            ) : (
-              <TableRow>
-                <TableCell colSpan={4} className="text-center">
-                  Tidak ada hasil
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
+        <div className="w-full overflow-x-auto">
+          <table className="min-w-full table-auto border-separate border border-gray-300">
+            <thead className="bg-gray-200">
+              <tr>
+                <th scope="col" className="p-4 text-center text-black">
+                  No
+                </th>
+                <th scope="col" className="p-4 text-center text-black">
+                  Tanggal
+                </th>
+                <th scope="col" className="p-4 text-center text-black">
+                  Semester
+                </th>
+                <th scope="col" className="p-4 text-center text-black">
+                  Skor
+                </th>
+                <th scope="col" className="p-4 text-center text-black">
+                  Hasil
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {report.length > 0 ? (
+                report.map((item, index) => (
+                  <tr
+                    key={index}
+                    className={
+                      item.score > 50
+                        ? "bg-green-100 text-left"
+                        : "bg-red-100 text-left"
+                    }
+                  >
+                    <td className="p-4 font-medium">{index + 1}</td>
+                    <td className="p-4">
+                      {dayjs(item.createdAt).format("YYYY-MM-DD")}
+                    </td>
+                    <td className="p-4">{item.semester}</td>
+                    <td className="p-4">{item.score}</td>
+                    <td className="p-4">{item.message}</td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan={5} className="p-4 text-center">
+                    Tidak ada hasil
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <button
