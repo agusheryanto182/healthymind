@@ -23,7 +23,7 @@ export function AuthButtons() {
         className="hover:bg-[--primary] hover:text-white"
         variant="outline"
       >
-        <Link href="/news">Berita</Link>
+        <Link href="/news">News</Link>
       </Button>
       {!user ? (
         <Button

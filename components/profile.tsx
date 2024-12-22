@@ -156,8 +156,23 @@ export function ProfileComponent() {
             onChange={(e) => setProdi(e.target.value)}
             value={prodi}
           >
-            <option value="Bidan">Bidan</option>
-            <option value="Gizi">Gizi</option>
+            <option value="S-1 Informatika">S-1 Informatika</option>
+            <option value="S-1 Sistem Informasi">S-1 Sistem Informasi</option>
+            <option value="S-1 Teknik Elektro">S-1 Teknik Elektro</option>
+            <option value="S-1 Gizi">S-1 Gizi</option>
+            <option value="S-1 Keperawatan">S-1 Keperawatan</option>
+            <option value="S-1 Kesehatan Masyarakat">
+              S-1 Kesehatan Masyarakat
+            </option>
+            <option value="D-3 Kebidanan">D-3 Kebidanan</option>
+            <option value="D-3 Fisioterapi">D-3 Fisioterapi</option>
+            <option value="S-1 Kebidanan">S-1 Kebidanan</option>
+            <option value="S-1 Akuntansi">S-1 Akuntansi</option>
+            <option value="S-1 Hubungan Internasional">
+              S-1 Hubungan Internasional
+            </option>
+            <option value="S-1 Ilmu Komunikasi">S-1 Ilmu Komunikasi</option>
+            <option value="S-1 Sastra Inggris">S-1 Sastra Inggris</option>
           </select>
         </div>
         <div>
@@ -182,7 +197,7 @@ export function ProfileComponent() {
           <div className="mb-2 block">
             <Label
               htmlFor="password2"
-              value="Kata Sandi"
+              value="Password"
               className="text-white"
             />
           </div>

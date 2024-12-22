@@ -67,7 +67,7 @@ export default function ReportComponent() {
     <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center">
       <div ref={resultRef} className="bg-white p-4">
         <h1 className="mb-4 text-center text-xl font-bold uppercase md:text-2xl">
-          MenHeal Detector Report
+          HealthyMind Respati Report
         </h1>
         <Table>
           <TableHeader className="bg-gray-200">
@@ -88,7 +88,7 @@ export default function ReportComponent() {
                 <TableRow
                   key={index}
                   className={
-                    item.score <= 20
+                    item.score > 50
                       ? "bg-green-100 text-center"
                       : "bg-red-100 text-center"
                   }

@@ -64,7 +64,7 @@ const data = {
       icon: ListVideo,
     },
     {
-      title: "Rencana Makan",
+      title: "Meal Plan",
       url: "/rencana-makan ",
       icon: Utensils,
       items: [
@@ -79,7 +79,7 @@ const data = {
       ],
     },
     {
-      title: "Waktu Bersantai",
+      title: "Relaxation Time",
       url: "/waktu-bersantai",
       icon: Timer,
     },
@@ -90,11 +90,11 @@ const data = {
       items: [
         {
           title: "Bapak Fx. Joko Krisdiyanto, S.Psi., M.Psi.",
-          url: "https://wa.me/6282220006836?text=Selamat%20pagi/siang/sore%2C%20Bapak.%20Mohon%20maaf%20menganggu%20waktunya.%20Saya%20ingin%20bertanya%20terkait%20meal%20plan%20sesuai%20dengan%20kondisi%20kesehatan%20mental%20saya.%20Apakah%20saya%20bisa%20berkonsultasi%20lebih%20lanjut%20mengenai%20hal%20ini%3F%20Terima%20kasih%20sebelumnya.%0A%0ANama%20%3A%20%0ANim%20%20%20%20%20%20%20%3A%20%0AProdi%20%20%20%20%20%20%20%3A%20%0ASemester%20%3A%20",
+          url: "https://wa.me/6282220006836?text=Selamat%20pagi/siang/sore,%20Ibu/Bapak.%20Mohon%20maaf%20menganggu%20waktunya.%20Saya%20ingin%20berkonsultasi%20terkait%20hasil%20skrining%20tes%20kesehatan%20mental%20saya.%20Apakah%20saya%20bisa%20berkonsultasi%20lebih%20lanjut%20mengenai%20hal%20ini?%20Terima%20kasih%20sebelumnya%0A%0ANama%20%20%20%20%20%20%20:%20%0ANim%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20:%20%0AProdi%20%20%20%20%20%20%20%20%20%20:%20%0ASemester%20%20%20%20%20%20%20:%20",
         },
         {
           title: "Ibu Rini Indriyani, S.Psi, MARS, M.Psi, Psikolog.",
-          url: "https://wa.me/6281326001174?text=Selamat%20pagi/siang/sore%2C%20Ibu.%20Mohon%20maaf%20menganggu%20waktunya.%20Saya%20ingin%20bertanya%20terkait%20meal%20plan%20sesuai%20dengan%20kondisi%20kesehatan%20mental%20saya.%20Apakah%20saya%20bisa%20berkonsultasi%20lebih%20lanjut%20mengenai%20hal%20ini%3F%20Terima%20kasih%20sebelumnya.%0A%0ANama%20%3A%20%0ANim%20%20%20%20%20%20%20%3A%20%0AProdi%20%20%20%20%20%20%20%3A%20%0ASemester%20%3A%20",
+          url: "https://wa.me/6281326001174?text=Selamat%20pagi/siang/sore,%20Ibu/Bapak.%20Mohon%20maaf%20menganggu%20waktunya.%20Saya%20ingin%20berkonsultasi%20terkait%20hasil%20skrining%20tes%20kesehatan%20mental%20saya.%20Apakah%20saya%20bisa%20berkonsultasi%20lebih%20lanjut%20mengenai%20hal%20ini?%20Terima%20kasih%20sebelumnya%0A%0ANama%20%20%20%20%20%20%20:%20%0ANim%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20:%20%0AProdi%20%20%20%20%20%20%20%20%20%20:%20%0ASemester%20%20%20%20%20%20%20:%20",
         },
       ],
     },

@@ -7,7 +7,7 @@ export default function Page() {
   const suaraPermainanPiano = "/assets/audios/suara-permainan-piano.mp3";
   return (
     <div>
-      <BreadcrumbComponent title="Waktu Bersantai" />
+      <BreadcrumbComponent title="Relaxation Time" />
 
       <div className="mx-auto w-full max-w-3xl px-4 md:px-0">
         <div className="my-4">
@@ -25,7 +25,7 @@ export default function Page() {
           </audio>
         </div>
         <div className="my-4">
-          <h1 className="font-bold">Suara Hujan</h1>
+          <h1 className="font-bold">Suara hujan</h1>
           <audio className="w-full" controls>
             <source src={suaraHujan} type="audio/mp3" />
             Your browser does not support the audio element.

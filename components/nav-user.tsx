@@ -80,7 +80,7 @@ export function NavUser({
             align="end"
             sideOffset={4}
           >
-            <DropdownMenuLabel className="p-0 font-normal">
+            {/* <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                 <Avatar className="h-8 w-8 rounded-lg">
                   <AvatarImage
@@ -98,7 +98,7 @@ export function NavUser({
                   </span>
                 </div>
               </div>
-            </DropdownMenuLabel>
+            </DropdownMenuLabel> */}
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem asChild>
@@ -110,13 +110,7 @@ export function NavUser({
               <DropdownMenuItem asChild>
                 <Link href="/test">
                   <Radar />
-                  Menheal Detector
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/test">
-                  <CreditCard />
-                  Tes
+                  Skrining Kesehatan Mental
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
@@ -128,7 +122,7 @@ export function NavUser({
               <DropdownMenuItem asChild>
                 <Link href="/consult-report">
                   <Headset />
-                  Konsultasi
+                  Laporan Konsultasi
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>

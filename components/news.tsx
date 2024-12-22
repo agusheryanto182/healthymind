@@ -1,11 +1,10 @@
 import Image from "next/image";
-
 export default function NewsComponent() {
   return (
     <div className="mx-auto flex max-w-3xl flex-col">
       {/* <h1 className="mb-4 px-4 text-center text-2xl font-bold md:px-0">
         Pentingnya Kesadaran Akan Kesehatan Mental di Era Modern
-      </h1>
+      </h1> */}
       <div className="px-4 md:px-0">
         <Image
           src="/assets/images/news-1.jpg"
@@ -14,7 +13,7 @@ export default function NewsComponent() {
           height={800}
           className="mx-auto rounded-lg"
         />
-      </div> */}
+      </div>
       <div className="my-6 px-4 md:px-0">
         <p className="mb-4 text-justify">
           Hasil Asia Care Survey 2024 menunjukkan bahwa masyarakat Indonesia
@@ -25,7 +24,7 @@ export default function NewsComponent() {
           tidak ditangani dapat membawa dampak serius, seperti gangguan fisik,
           penurunan produktivitas, serta hilangnya interaksi sosial.
         </p>
-        <h2 className="mb-2 text-lg font-semibold">
+        <h2 className="mb-2 text-xl font-semibold">
           Definisi Kesehatan Mental
         </h2>
         <p className="mb-4 text-justify">
@@ -38,7 +37,7 @@ export default function NewsComponent() {
           gangguan mental mengarah pada perasaan putus asa, penurunan kinerja,
           dan kesulitan dalam mengendalikan emosi.
         </p>
-        <h2 className="mb-2 text-lg font-semibold">
+        <h2 className="mb-2 text-xl font-semibold">
           Gangguan Kesehatan Mental di Indonesia
         </h2>
         <p className="mb-4 text-justify">
@@ -48,10 +47,10 @@ export default function NewsComponent() {
           gangguan mental menjadi masalah yang cukup besar di masyarakat dan
           memerlukan perhatian serius.
         </p>
-        <h2 className="mb-2 text-lg font-semibold">
+        <h2 className="mb-2 text-xl font-semibold">
           Kasus Bunuh Diri di Kalangan Mahasiswa
         </h2>
-        <p>
+        <p className="mb-4 text-justify">
           Kasus bunuh diri di kalangan mahasiswa semakin meningkat dan menjadi
           sorotan. Menurut data dari Asosiasi Pencegahan Bunuh Diri Indonesia
           (INASP), terdapat 670 kasus bunuh diri yang tercatat oleh kepolisian.
@@ -59,7 +58,7 @@ export default function NewsComponent() {
           pertemanan, akademik, hingga suasana kampus, menjadi salah satu
           penyebab utama gangguan mental yang mereka alami.
         </p>
-        <h2 className="mb-2 text-lg font-semibold">
+        <h2 className="mb-2 text-xl font-semibold">
           Masalah Kesehatan Mental di Kalangan Mahasiswa
         </h2>
         <p className="mb-4 text-justify">
@@ -70,7 +69,7 @@ export default function NewsComponent() {
           menyebabkan kesulitan dalam mengelola emosi, yang pada akhirnya
           memengaruhi produktivitas dan kualitas hidup mereka.
         </p>
-        <h2 className="mb-2 text-lg font-semibold">Rekomendasi</h2>
+        <h2 className="mb-2 text-xl font-semibold">Rekomendasi</h2>
         <p className="text-justify">
           Kesehatan mental sangat penting untuk kesejahteraan individu, terutama
           bagi mahasiswa yang rentan terhadap berbagai tekanan. Oleh karena itu,
@@ -78,7 +77,7 @@ export default function NewsComponent() {
         </p>
         <ol
           type="a"
-          className="list-inside list-decimal pl-6"
+          className="list-inside list-decimal pl-6 text-justify"
           style={{ listStyle: "lower-alpha" }}
         >
           <li>

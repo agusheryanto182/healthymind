@@ -1,10 +1,11 @@
 import BreadcrumbComponent from "@/components/breadcrumb";
 import Image from "next/image";
+import ConsultButton from "@/components/consult-button";
 
 export default function Page() {
   return (
     <div className="min-h-screen">
-      <BreadcrumbComponent title="Rencana Makan" />
+      <BreadcrumbComponent title="Meal Plan" />
       <div className="mx-auto mb-8 flex max-w-3xl flex-col px-4 md:px-0">
         <h1 className="mb-4 px-4 text-center text-2xl font-bold md:px-0">
           Contoh Menu Sehari
@@ -12,167 +13,26 @@ export default function Page() {
         <div>
           <Image
             src="/assets/images/meal-plan.jpeg"
-            alt="Rencana Makan"
+            alt="Meal Plan"
             width={800}
             height={800}
             className="mx-auto rounded-lg"
           />
         </div>
-        {/* 
-        <table
-          className="mt-16 w-full"
-          border={1}
-          cellPadding={10}
-          cellSpacing={0}
-          style={{
-            width: "100%",
-            borderCollapse: "collapse",
-            fontFamily: "Arial, sans-serif",
-            border: "1px solid #444",
-          }}
-        >
+
+        {/* <table className="mt-16 min-w-full table-auto border-separate border border-gray-300">
           <thead>
-            <tr style={{ backgroundColor: "#f4f4f4" }}>
-              <th
-                style={{
-                  border: "1px solid #444",
-                  padding: "10px",
-                  textAlign: "left",
-                }}
-              >
+            <tr className="bg-cyan-500">
+              <th className="border border-gray-300 p-4 text-left text-white">
                 Waktu
               </th>
-              <th
-                style={{
-                  border: "1px solid #444",
-                  padding: "10px",
-                  textAlign: "left",
-                }}
-              >
+              <th className="border border-gray-300 p-4 text-left text-white">
                 Menu
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td
-                style={{
-                  border: "1px solid #444",
-                  padding: "10px",
-                }}
-              >
-                Makan Pagi
-              </td>
-              <td
-                style={{
-                  border: "1px solid #444",
-                  padding: "10px",
-                }}
-              >
-                <ul>
-                  <li>Nasi</li>
-                  <li>Telur mata sapi</li>
-                  <li>Tumis bayam</li>
-                </ul>
-              </td>
-            </tr>
-            <tr style={{ backgroundColor: "#f9f9f9" }}>
-              <td
-                style={{
-                  border: "1px solid #444",
-                  padding: "10px",
-                }}
-              >
-                Cemilan
-              </td>
-              <td
-                style={{
-                  border: "1px solid #444",
-                  padding: "10px",
-                }}
-              >
-                <ul>
-                  <li>Yogurt</li>
-                  <li>Kacang almond</li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td
-                style={{
-                  border: "1px solid #444",
-                  padding: "10px",
-                }}
-              >
-                Makan Siang
-              </td>
-              <td
-                style={{
-                  border: "1px solid #444",
-                  padding: "10px",
-                }}
-              >
-                <ul>
-                  <li>Nasi</li>
-                  <li>Ikan balanak panggang</li>
-                  <li>Sup kacang merah</li>
-                  <li>Sayur cap cay</li>
-                  <li>Apel</li>
-                </ul>
-              </td>
-            </tr>
-            <tr style={{ backgroundColor: "#f9f9f9" }}>
-              <td
-                style={{
-                  border: "1px solid #444",
-                  padding: "10px",
-                }}
-              >
-                Cemilan
-              </td>
-              <td
-                style={{
-                  border: "1px solid #444",
-                  padding: "10px",
-                }}
-              >
-                <ul>
-                  <li>Bolu pandan</li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td
-                style={{
-                  border: "1px solid #444",
-                  padding: "10px",
-                }}
-              >
-                Makan Malam
-              </td>
-              <td
-                style={{
-                  border: "1px solid #444",
-                  padding: "10px",
-                }}
-              >
-                <ul>
-                  <li>Sandwich tuna</li>
-                  <li>Susu</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table> */}
-        <table className="mt-16 min-w-full table-auto border-separate border border-gray-300">
-          <thead>
-            <tr className="bg-gray-100">
-              <th className="border border-gray-300 p-4 text-left">Waktu</th>
-              <th className="border border-gray-300 p-4 text-left">Menu</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
+            <tr className="bg-cyan-50">
               <td className="border border-gray-300 p-4">Makan Pagi</td>
               <td className="border border-gray-300 p-4">
                 <ul>
@@ -182,7 +42,7 @@ export default function Page() {
                 </ul>
               </td>
             </tr>
-            <tr className="bg-gray-50">
+            <tr className="bg-cyan-50">
               <td className="border border-gray-300 p-4">Cemilan</td>
               <td className="border border-gray-300 p-4">
                 <ul>
@@ -191,7 +51,7 @@ export default function Page() {
                 </ul>
               </td>
             </tr>
-            <tr>
+            <tr className="bg-cyan-50">
               <td className="border border-gray-300 p-4">Makan Siang</td>
               <td className="border border-gray-300 p-4">
                 <ul>
@@ -203,7 +63,7 @@ export default function Page() {
                 </ul>
               </td>
             </tr>
-            <tr className="bg-gray-50">
+            <tr className="bg-cyan-50">
               <td className="border border-gray-300 p-4">Cemilan</td>
               <td className="border border-gray-300 p-4">
                 <ul>
@@ -211,7 +71,7 @@ export default function Page() {
                 </ul>
               </td>
             </tr>
-            <tr>
+            <tr className="bg-cyan-50">
               <td className="border border-gray-300 p-4">Makan Malam</td>
               <td className="border border-gray-300 p-4">
                 <ul>
@@ -221,28 +81,88 @@ export default function Page() {
               </td>
             </tr>
           </tbody>
+        </table> */}
+
+        <table className="mt-16 min-w-full table-auto border-separate border border-gray-300">
+          <thead>
+            <tr className="bg-cyan-500">
+              <th className="border border-gray-300 p-4 text-center text-white">
+                Makan Pagi
+              </th>
+              <th className="border border-gray-300 p-4 text-center text-white">
+                Cemilan
+              </th>
+              <th className="border border-gray-300 p-4 text-center text-white">
+                Makan Siang
+              </th>
+              <th className="border border-gray-300 p-4 text-center text-white">
+                Cemilan
+              </th>
+              <th className="border border-gray-300 p-4 text-center text-white">
+                Makan Malam
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="bg-cyan-50">
+              <td className="border border-gray-300 p-4">
+                <ul className="text-center">
+                  <li>Nasi</li>
+                  <li>Telur mata sapi</li>
+                  <li>Tumis bayam</li>
+                </ul>
+              </td>
+              <td className="border border-gray-300 p-4">
+                <ul className="text-center">
+                  <li>Yogurt</li>
+                  <li>Kacang almond</li>
+                </ul>
+              </td>
+              <td className="border border-gray-300 p-4">
+                <ul className="text-center">
+                  <li>Nasi</li>
+                  <li>Ikan balanak panggang</li>
+                  <li>Sup kacang merah</li>
+                  <li>Sayur cap cay</li>
+                  <li>Apel</li>
+                </ul>
+              </td>
+              <td className="border border-gray-300 p-4">
+                <ul className="text-center">
+                  <li>Bolu pandan</li>
+                </ul>
+              </td>
+              <td className="border border-gray-300 p-4">
+                <ul className="text-center">
+                  <li>Sandwich tuna</li>
+                  <li>Susu</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
         </table>
+
         <div className="mt-16">
           <h2 className="mb-4 text-lg font-semibold">
-            Bahan Makanan yang bersifat neurotransmitter:
+            Bahan Makanan yang Bersifat Neurotransmitter:
           </h2>
           <div className="overflow-x-auto">
             <table className="min-w-full table-auto border-separate border border-gray-300">
               <thead>
                 <tr className="bg-gray-100">
-                  <th className="border border-gray-300 p-4 text-left">
+                  <th className="border border-gray-300 p-4 text-center">
                     Neurotransmitter
                   </th>
-                  <th className="border border-gray-300 p-4 text-left">
+                  <th className="border border-gray-300 p-4 text-center">
                     Sumber Zat Gizi
                   </th>
-                  <th className="border border-gray-300 p-4 text-left">
+                  <th className="border border-gray-300 p-4 text-center">
                     Sumber Pangan
                   </th>
-                  <th className="border border-gray-300 p-4 text-left">
+                  <th className="border border-gray-300 p-4 text-center">
                     Metabolisme di Otak
                   </th>
-                  <th className="border border-gray-300 p-4 text-left">
+                  <th className="border border-gray-300 p-4 text-center">
                     Efek Terhadap Mood
                   </th>
                 </tr>
@@ -342,7 +262,7 @@ export default function Page() {
             </table>
           </div>
         </div>
-        <a
+        {/* <a
           href="https://wa.me/6282226666571?text=Selamat%20pagi/siang/sore%2C%20Ibu.%20Mohon%20maaf%20menganggu%20waktunya.%20Saya%20ingin%20bertanya%20terkait%20meal%20plan%20sesuai%20dengan%20kondisi%20kesehatan%20mental%20saya.%20Apakah%20saya%20bisa%20berkonsultasi%20lebih%20lanjut%20mengenai%20hal%20ini%3F%20Terima%20kasih%20sebelumnya.%0A%0ANama%20%3A%20%0ANim%20%20%20%20%20%20%20%3A%20%0AProdi%20%20%20%20%20%20%20%3A%20%0ASemester%20%3A%20"
           target="_blank"
           className="flex items-center justify-center"
@@ -350,7 +270,18 @@ export default function Page() {
           <button className="mt-8 rounded-lg border border-cyan-500 px-4 py-2 text-[--primary]  hover:bg-[--hover] hover:text-white ">
             Konsultasi
           </button>
-        </a>
+        </a> */}
+
+        <div className="mt-4 flex items-center justify-center">
+          <ConsultButton
+            data={[
+              {
+                title: "Ibu Inayah, S.Gz., M.Si., RD.",
+                url: "https://wa.me/6282226666571?text=Selamat%20pagi/siang/sore%2C%20Ibu.%20Mohon%20maaf%20menganggu%20waktunya.%20Saya%20ingin%20bertanya%20terkait%20meal%20plan%20sesuai%20dengan%20kondisi%20kesehatan%20mental%20saya.%20Apakah%20saya%20bisa%20berkonsultasi%20lebih%20lanjut%20mengenai%20hal%20ini%3F%20Terima%20kasih%20sebelumnya.%0A%0ANama%20%3A%20%0ANim%20%20%20%20%20%20%20%3A%20%0AProdi%20%20%20%20%20%20%20%3A%20%0ASemester%20%3A%20",
+              },
+            ]}
+          />
+        </div>
       </div>
     </div>
   );

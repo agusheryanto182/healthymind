@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function TestComponent() {
-  const [semester, setSemester] = useState(1);
+  const [semester, setSemester] = useState(null);
   const router = useRouter();
 
   const handleSubmit = () => {

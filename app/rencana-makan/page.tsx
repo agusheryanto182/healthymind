@@ -4,15 +4,15 @@ import Image from "next/image";
 export default function Page() {
   return (
     <div className="min-h-screen">
-      <BreadcrumbComponent title="Rencana Makan" />
+      <BreadcrumbComponent title="Meal Plan" />
       <div className="mx-auto mb-8 flex max-w-3xl flex-col px-4 md:px-0">
         <h1 className="mb-4 px-4 text-center text-2xl font-bold md:px-0">
-          Rencana Makan
+          Meal Plan
         </h1>
         <div>
           <Image
             src="/assets/images/meal-plan.jpeg"
-            alt="Rencana Makan"
+            alt="Meal Plan"
             width={800}
             height={800}
             className="mx-auto rounded-lg"

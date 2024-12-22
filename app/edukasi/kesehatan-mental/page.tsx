@@ -24,7 +24,7 @@ export default function Page() {
             <h2 className="mb-2 text-lg font-semibold">
               Pengertian Kesehatan Mental
             </h2>
-            <p>
+            <p className="text-justify">
               Kesehatan mental mengacu pada cara seseorang berpikir,
               berperasaan, dan bertindak secara efektif saat menghadapi
               tantangan dan stres hidup. Kesehatan mental adalah keadaan

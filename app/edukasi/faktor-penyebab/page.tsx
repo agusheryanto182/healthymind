@@ -22,7 +22,7 @@ export default function Page() {
         <div className="my-6 px-4 md:px-0">
           <section className="mb-6">
             <h2 className="mb-2 text-lg font-semibold">Faktor Penyebab</h2>
-            <p>
+            <p className="text-justify">
               Menurut Daradjat yang dikutip oleh Mafud (2014), terdapat dua
               faktor penyebab utama yang memengaruhi kesehatan mental, yaitu
               faktor internal dan eksternal.
@@ -32,7 +32,7 @@ export default function Page() {
               className="list-inside list-decimal pl-6"
               style={{ listStyle: "lower-alpha" }}
             >
-              <li>
+              <li className="text-justify">
                 <strong>
                   Faktor internal <br />
                 </strong>{" "}
@@ -40,7 +40,7 @@ export default function Page() {
                 kematangan, kondisi psikologis, keberagamaan, cara menghadapi
                 masalah hidup, makna hidup, serta keseimbangan dalam berpikir.
               </li>
-              <li>
+              <li className="text-justify">
                 <strong>
                   Faktor eksternal <br />
                 </strong>{" "}

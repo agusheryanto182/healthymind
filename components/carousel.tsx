@@ -15,7 +15,7 @@ export default function CarouselComponent() {
         <div className="flex h-full items-center justify-center bg-cyan-500 bg-opacity-30">
           <section className="w-1/4">
             <h3 className="text-xs font-semibold md:text-xl">
-              Siap memulai perjalanan menuju kesehatan mental yang lebih baik?
+              Mau langsung tes psikologi?
             </h3>
             <Button className="mt-4 rounded-full bg-[--primary] px-3 py-1 text-xs uppercase text-white hover:bg-[--hover] md:px-6 md:py-3 md:text-base">
               <Link href="/test">tes psikologi</Link>

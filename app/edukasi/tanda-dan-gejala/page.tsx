@@ -19,7 +19,7 @@ export default function Page() {
           />
         </div>
 
-        <div className="my-6 px-4 md:px-0">
+        <div className="my-6 px-4 text-justify md:px-0">
           <section className="mb-6">
             <h2 className="mb-2 text-lg font-semibold">Tanda dan Gejala</h2>
             <p>

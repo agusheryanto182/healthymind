@@ -4,7 +4,7 @@ import BreadcrumbComponent from "@/components/breadcrumb";
 export default function Page() {
   return (
     <div>
-      <BreadcrumbComponent title="Berita" />
+      <BreadcrumbComponent title="News" />
       <NewsComponent />
     </div>
   );

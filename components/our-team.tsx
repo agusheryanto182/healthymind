@@ -4,44 +4,51 @@ export default function OurTeamComponent() {
   type TeamMember = {
     name: string;
     nim: string;
+    prodi: string;
     universitas: string;
     image: string;
   };
 
   const ourTeam: TeamMember[] = [
     {
-      name: "Merin Ginting",
-      nim: "22180064",
-      universitas: "Universitas Respati Yogyakarta",
-      image: "/assets/icons/profile.svg",
-    },
-    {
-      name: "Andriani Christina Sulu",
-      nim: "22180065",
-      universitas: "Universitas Respati Yogyakarta",
-      image: "/assets/icons/profile.svg",
-    },
-    {
-      name: "Ninis Solihah",
-      nim: "22180066",
-      universitas: "Universitas Respati Yogyakarta",
-      image: "/assets/icons/profile.svg",
-    },
-    {
       name: "Anggraheni Masyhuroh",
       nim: "22120091",
-      universitas: "Universitas Respati Yogyakarta",
-      image: "/assets/icons/profile.svg",
-    },
-    {
-      name: "Ummul Khoiroh",
-      nim: "22120092",
+      prodi: "S-1 Gizi",
       universitas: "Universitas Respati Yogyakarta",
       image: "/assets/icons/profile.svg",
     },
     {
       name: "Novita Puput Wati",
       nim: "22120094",
+      prodi: "S-1 Gizi",
+      universitas: "Universitas Respati Yogyakarta",
+      image: "/assets/icons/profile.svg",
+    },
+    {
+      name: "Ummul Khoiroh",
+      nim: "22120092",
+      prodi: "S-1 Gizi",
+      universitas: "Universitas Respati Yogyakarta",
+      image: "/assets/icons/profile.svg",
+    },
+    {
+      name: "Andriani Christina Sulu",
+      nim: "22180065",
+      prodi: "S-1 Kebidanan",
+      universitas: "Universitas Respati Yogyakarta",
+      image: "/assets/icons/profile.svg",
+    },
+    {
+      name: "Merin Ginting",
+      nim: "22180064",
+      prodi: "S-1 Kebidanan",
+      universitas: "Universitas Respati Yogyakarta",
+      image: "/assets/icons/profile.svg",
+    },
+    {
+      name: "Ninis Solihah",
+      nim: "22180066",
+      prodi: "S-1 Kebidanan",
       universitas: "Universitas Respati Yogyakarta",
       image: "/assets/icons/profile.svg",
     },
@@ -65,6 +72,7 @@ export default function OurTeamComponent() {
           <div>
             <h1>{member.name}</h1>
             <p>{member.nim}</p>
+            <p>{member.prodi}</p>
             <p>{member.universitas}</p>
           </div>
         </div>
