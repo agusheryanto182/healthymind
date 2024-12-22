@@ -126,17 +126,17 @@ export default function ConsultReport() {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[100px] text-center">No</TableHead>
-            <TableHead className="text-center">Semester</TableHead>
-            <TableHead className="text-center">Tanggal Konsultasi</TableHead>
-            <TableHead className="text-center">Oleh</TableHead>
+            <TableHead className="w-[100px] text-left">No</TableHead>
+            <TableHead className="text-left">Semester</TableHead>
+            <TableHead className="text-left">Tanggal Konsultasi</TableHead>
+            <TableHead className="text-left">Oleh</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {reports.map((report, index) => (
             <TableRow
               key={index}
-              className="cursor-pointer text-center hover:bg-gray-100"
+              className="cursor-pointer text-left hover:bg-gray-100"
               onClick={() => setDeleteReport(report)}
             >
               <TableCell className="font-medium">{index + 1}</TableCell>

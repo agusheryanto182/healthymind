@@ -79,6 +79,7 @@ export default function ReportComponent() {
                 Tanggal
               </TableHead>
               <TableHead className="text-center text-black">Semester</TableHead>
+              <TableHead className="text-center text-black">Skor</TableHead>
               <TableHead className="text-center text-black">Hasil</TableHead>
             </TableRow>
           </TableHeader>
@@ -89,8 +90,8 @@ export default function ReportComponent() {
                   key={index}
                   className={
                     item.score > 50
-                      ? "bg-green-100 text-center"
-                      : "bg-red-100 text-center"
+                      ? "bg-green-100 text-left"
+                      : "bg-red-100 text-left"
                   }
                 >
                   <TableCell className="font-medium">{index + 1}</TableCell>
@@ -98,6 +99,7 @@ export default function ReportComponent() {
                     {dayjs(item.createdAt).format("YYYY-MM-DD")}
                   </TableCell>
                   <TableCell>{item.semester}</TableCell>
+                  <TableCell>{item.score}</TableCell>
                   <TableCell>{item.message}</TableCell>
                 </TableRow>
               ))
