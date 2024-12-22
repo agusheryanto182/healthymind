@@ -86,19 +86,19 @@ export default function Page() {
         <table className="mt-16 min-w-full table-auto border-separate border border-gray-300">
           <thead>
             <tr className="bg-cyan-500">
-              <th className="border border-gray-300 p-4 text-center text-white">
+              <th className="border border-gray-300 p-4 text-left text-white">
                 Makan Pagi
               </th>
-              <th className="border border-gray-300 p-4 text-center text-white">
+              <th className="border border-gray-300 p-4 text-left text-white">
                 Cemilan
               </th>
-              <th className="border border-gray-300 p-4 text-center text-white">
+              <th className="border border-gray-300 p-4 text-left text-white">
                 Makan Siang
               </th>
-              <th className="border border-gray-300 p-4 text-center text-white">
+              <th className="border border-gray-300 p-4 text-left text-white">
                 Cemilan
               </th>
-              <th className="border border-gray-300 p-4 text-center text-white">
+              <th className="border border-gray-300 p-4 text-left text-white">
                 Makan Malam
               </th>
             </tr>
@@ -106,20 +106,20 @@ export default function Page() {
           <tbody>
             <tr className="bg-cyan-50">
               <td className="border border-gray-300 p-4">
-                <ul className="text-center">
+                <ul className="text-left">
                   <li>Nasi</li>
                   <li>Telur mata sapi</li>
                   <li>Tumis bayam</li>
                 </ul>
               </td>
               <td className="border border-gray-300 p-4">
-                <ul className="text-center">
+                <ul className="text-left">
                   <li>Yogurt</li>
                   <li>Kacang almond</li>
                 </ul>
               </td>
               <td className="border border-gray-300 p-4">
-                <ul className="text-center">
+                <ul className="text-left">
                   <li>Nasi</li>
                   <li>Ikan balanak panggang</li>
                   <li>Sup kacang merah</li>
@@ -128,12 +128,12 @@ export default function Page() {
                 </ul>
               </td>
               <td className="border border-gray-300 p-4">
-                <ul className="text-center">
+                <ul className="text-left">
                   <li>Bolu pandan</li>
                 </ul>
               </td>
               <td className="border border-gray-300 p-4">
-                <ul className="text-center">
+                <ul className="text-left">
                   <li>Sandwich tuna</li>
                   <li>Susu</li>
                 </ul>
@@ -150,24 +150,24 @@ export default function Page() {
             <table className="min-w-full table-auto border-separate border border-gray-300">
               <thead>
                 <tr className="bg-gray-100">
-                  <th className="border border-gray-300 p-4 text-center">
+                  <th className="border border-gray-300 p-4 text-left">
                     Neurotransmitter
                   </th>
-                  <th className="border border-gray-300 p-4 text-center">
+                  <th className="border border-gray-300 p-4 text-left">
                     Sumber Zat Gizi
                   </th>
-                  <th className="border border-gray-300 p-4 text-center">
+                  <th className="border border-gray-300 p-4 text-left">
                     Sumber Pangan
                   </th>
-                  <th className="border border-gray-300 p-4 text-center">
+                  <th className="border border-gray-300 p-4 text-left">
                     Metabolisme di Otak
                   </th>
-                  <th className="border border-gray-300 p-4 text-center">
+                  <th className="border border-gray-300 p-4 text-left">
                     Efek Terhadap Mood
                   </th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="text-left">
                 <tr>
                   <td className="border border-gray-300 p-4">Serotonin</td>
                   <td className="border border-gray-300 p-4">
