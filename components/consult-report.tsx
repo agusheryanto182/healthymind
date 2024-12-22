@@ -160,7 +160,7 @@ export default function ConsultReport() {
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-4">
           <div className="w-full max-w-md rounded-lg bg-white p-6">
             <h2 className="mb-4 text-lg font-bold">Tambah Laporan</h2>
             <form onSubmit={(e) => e.preventDefault()}>
@@ -236,7 +236,7 @@ export default function ConsultReport() {
         </div>
       )}
       {deleteReport && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-4">
           <div className="w-full max-w-md rounded-lg bg-white p-6">
             <h2 className="mb-4 text-lg font-bold">Hapus Laporan</h2>
             <p>Apakah Anda yakin ingin menghapus laporan ini?</p>
