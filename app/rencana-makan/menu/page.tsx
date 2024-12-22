@@ -83,64 +83,66 @@ export default function Page() {
           </tbody>
         </table> */}
 
-        <table className="mt-16 min-w-full table-auto border-separate border border-gray-300">
-          <thead>
-            <tr className="bg-cyan-500">
-              <th className="border border-gray-300 p-4 text-left text-white">
-                Makan Pagi
-              </th>
-              <th className="border border-gray-300 p-4 text-left text-white">
-                Cemilan
-              </th>
-              <th className="border border-gray-300 p-4 text-left text-white">
-                Makan Siang
-              </th>
-              <th className="border border-gray-300 p-4 text-left text-white">
-                Cemilan
-              </th>
-              <th className="border border-gray-300 p-4 text-left text-white">
-                Makan Malam
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="bg-cyan-50">
-              <td className="border border-gray-300 p-4">
-                <ul className="text-left">
-                  <li>Nasi</li>
-                  <li>Telur mata sapi</li>
-                  <li>Tumis bayam</li>
-                </ul>
-              </td>
-              <td className="border border-gray-300 p-4">
-                <ul className="text-left">
-                  <li>Yogurt</li>
-                  <li>Kacang almond</li>
-                </ul>
-              </td>
-              <td className="border border-gray-300 p-4">
-                <ul className="text-left">
-                  <li>Nasi</li>
-                  <li>Ikan balanak panggang</li>
-                  <li>Sup kacang merah</li>
-                  <li>Sayur cap cay</li>
-                  <li>Apel</li>
-                </ul>
-              </td>
-              <td className="border border-gray-300 p-4">
-                <ul className="text-left">
-                  <li>Bolu pandan</li>
-                </ul>
-              </td>
-              <td className="border border-gray-300 p-4">
-                <ul className="text-left">
-                  <li>Sandwich tuna</li>
-                  <li>Susu</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="overflow-x-auto">
+          <table className="mt-16 min-w-full table-auto border-separate border border-gray-300">
+            <thead>
+              <tr className="bg-cyan-500">
+                <th className="border border-gray-300 p-4 text-left text-white">
+                  Makan Pagi
+                </th>
+                <th className="border border-gray-300 p-4 text-left text-white">
+                  Cemilan
+                </th>
+                <th className="border border-gray-300 p-4 text-left text-white">
+                  Makan Siang
+                </th>
+                <th className="border border-gray-300 p-4 text-left text-white">
+                  Cemilan
+                </th>
+                <th className="border border-gray-300 p-4 text-left text-white">
+                  Makan Malam
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-cyan-50">
+                <td className="border border-gray-300 p-4">
+                  <ul className="text-left">
+                    <li>Nasi</li>
+                    <li>Telur mata sapi</li>
+                    <li>Tumis bayam</li>
+                  </ul>
+                </td>
+                <td className="border border-gray-300 p-4">
+                  <ul className="text-left">
+                    <li>Yogurt</li>
+                    <li>Kacang almond</li>
+                  </ul>
+                </td>
+                <td className="border border-gray-300 p-4">
+                  <ul className="text-left">
+                    <li>Nasi</li>
+                    <li>Ikan balanak panggang</li>
+                    <li>Sup kacang merah</li>
+                    <li>Sayur cap cay</li>
+                    <li>Apel</li>
+                  </ul>
+                </td>
+                <td className="border border-gray-300 p-4">
+                  <ul className="text-left">
+                    <li>Bolu pandan</li>
+                  </ul>
+                </td>
+                <td className="border border-gray-300 p-4">
+                  <ul className="text-left">
+                    <li>Sandwich tuna</li>
+                    <li>Susu</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <div className="mt-16">
           <h2 className="mb-4 text-lg font-semibold">
