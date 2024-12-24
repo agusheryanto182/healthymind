@@ -8,6 +8,7 @@ import {
   Utensils,
   Timer,
   HeadsetIcon,
+  Book,
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
@@ -97,6 +98,11 @@ const data = {
           url: "https://wa.me/6281326001174?text=Selamat%20pagi/siang/sore,%20Ibu/Bapak.%20Mohon%20maaf%20menganggu%20waktunya.%20Saya%20ingin%20berkonsultasi%20terkait%20hasil%20skrining%20tes%20kesehatan%20mental%20saya.%20Apakah%20saya%20bisa%20berkonsultasi%20lebih%20lanjut%20mengenai%20hal%20ini?%20Terima%20kasih%20sebelumnya%0A%0ANama%20%20%20%20%20%20%20:%20%0ANim%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20:%20%0AProdi%20%20%20%20%20%20%20%20%20%20:%20%0ASemester%20%20%20%20%20%20%20:%20",
         },
       ],
+    },
+    {
+      title: "Referensi",
+      url: "/referensi",
+      icon: Book,
     },
   ],
 };

@@ -6,6 +6,7 @@ import CustomButtonComponent from "./custom-button";
 import { Input } from "./ui/input";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export default function TestComponent() {
   const [semester, setSemester] = useState(null);
@@ -15,6 +16,8 @@ export default function TestComponent() {
     if (semester > 0) {
       localStorage.setItem("semester", String(semester));
       router.push("/mental-test");
+    } else {
+      toast.error("Semester harus diisi");
     }
   };
 

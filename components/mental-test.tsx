@@ -289,13 +289,13 @@ export default function MentalHealthTest(): JSX.Element {
               {finalResult && (
                 <p className="mb-6 text-gray-700">
                   Semakin tinggi skornya, semakin baik pula kesehatan mental
-                  kamu. Jika skor kamu lebih rendah dari 50 poin, kami sarankan
-                  kamu juga menguji diri sendiri pada kuesioner yang disebutkan
-                  di atas (PHQ-9 dan GAD-7) dan mengikuti hasilnya pada skala
-                  tersebut. Apa pun itu, kami sarankan kamu terus memantau
-                  kesehatan mental kamu sendiri dan juga membaca bagian
-                  Perawatan Diri, di mana kamu dapat menemukan kiat-kiat
-                  bermanfaat tentang cara meningkatkan kesehatan mental kamu.
+                  Anda. Jika skor Anda lebih rendah dari 50 poin, kami sarankan
+                  Anda menguji diri sendiri menggunakan kuesioner (PHQ-9 dan
+                  GAD-7) dan mengikuti hasilnya pada skala tersebut. Apa pun
+                  itu, kami sarankan Anda terus memantau kesehatan mental Anda
+                  sendiri dan juga membaca bagian tips dan trick, di mana Anda
+                  dapat menemukan kiat-kiat bermanfaat tentang cara meningkatkan
+                  kesehatan mental Anda.
                 </p>
               )}
             </div>

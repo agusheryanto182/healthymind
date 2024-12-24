@@ -8,9 +8,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Cookies from "js-cookie";
 import toast from "react-hot-toast";
+import { toPng } from "html-to-image";
 
 export default function ConsultReport() {
   const [reports, setReports] = useState([]);
@@ -21,6 +22,35 @@ export default function ConsultReport() {
     by: "",
   });
   const [deleteReport, setDeleteReport] = useState(null);
+
+  const resultRef = useRef<HTMLDivElement>(null);
+
+  const handleDownload = async () => {
+    if (resultRef.current) {
+      try {
+        // Set the width and height to simulate a desktop layout
+        const originalWidth = resultRef.current.style.width;
+        const originalHeight = resultRef.current.style.height;
+
+        // Set desired width and height for desktop layout
+        resultRef.current.style.width = "1200px"; // Example desktop width
+        resultRef.current.style.height = "auto"; // Adjust height automatically
+
+        // Wait for styles to apply and then capture the image
+        const dataUrl = await toPng(resultRef.current);
+        const link = document.createElement("a");
+        link.href = dataUrl;
+        link.download = "mental-test-report.png";
+        link.click();
+
+        // Restore original width and height
+        resultRef.current.style.width = originalWidth;
+        resultRef.current.style.height = originalHeight;
+      } catch (error) {
+        console.error("Failed to download the image.", error);
+      }
+    }
+  };
 
   const handleDeleteReport = async () => {
     const token = Cookies.get("token");
@@ -119,34 +149,46 @@ export default function ConsultReport() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-4xl">
-      <h1 className="mb-4 text-center text-xl font-bold uppercase md:text-2xl">
-        Laporan Konsultasi
-      </h1>
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead className="w-[100px] text-left">No</TableHead>
-            <TableHead className="text-left">Semester</TableHead>
-            <TableHead className="text-left">Tanggal Konsultasi</TableHead>
-            <TableHead className="text-left">Oleh</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {reports.map((report, index) => (
-            <TableRow
-              key={index}
-              className="cursor-pointer text-left hover:bg-gray-100"
-              onClick={() => setDeleteReport(report)}
-            >
-              <TableCell className="font-medium">{index + 1}</TableCell>
-              <TableCell>{report.semester}</TableCell>
-              <TableCell>{report.date}</TableCell>
-              <TableCell>{report.by}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+    <div className="mx-auto w-full max-w-screen-xl">
+      <div ref={resultRef} className="w-full bg-white p-4">
+        <h1 className="mb-4 text-center text-xl font-bold uppercase md:text-2xl">
+          Laporan Konsultasi
+        </h1>
+        <div className="w-full overflow-x-auto">
+          <table className="min-w-full table-auto border-separate border border-gray-300">
+            <thead className="bg-gray-200">
+              <tr>
+                <th scope="col" className="p-4 text-left  text-black">
+                  No
+                </th>
+                <th scope="col" className="p-4 text-left  text-black">
+                  Semester
+                </th>
+                <th scope="col" className="p-4 text-left  text-black">
+                  Tanggal Konsultasi
+                </th>
+                <th scope="col" className="p-4 text-left  text-black">
+                  Oleh
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {reports.map((report, index) => (
+                <tr
+                  key={index}
+                  className="cursor-pointer text-left hover:bg-cyan-500 hover:text-white"
+                  onClick={() => setDeleteReport(report)}
+                >
+                  <td className="p-4 font-medium">{index + 1}</td>
+                  <td className="p-4 font-medium">{report.semester}</td>
+                  <td className="p-4 font-medium">{report.date}</td>
+                  <td className="p-4 font-medium">{report.by}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
       <div className="mt-4 flex w-full items-center justify-center gap-4 font-bold">
         <button
           className="rounded-lg border border-cyan-500 px-4 py-2 text-[--primary] hover:bg-[--hover] hover:text-white"
@@ -154,7 +196,10 @@ export default function ConsultReport() {
         >
           Tambah Laporan
         </button>
-        <button className="rounded-lg border border-cyan-500 px-4 py-2 text-[--primary] hover:bg-[--hover] hover:text-white">
+        <button
+          onClick={handleDownload}
+          className="rounded-lg border border-cyan-500 px-4 py-2 text-[--primary] hover:bg-[--hover] hover:text-white"
+        >
           Download
         </button>
       </div>

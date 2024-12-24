@@ -15,10 +15,10 @@ export default function CarouselComponent() {
         <div className="flex h-full items-center justify-center bg-cyan-500 bg-opacity-30">
           <section className="w-1/4">
             <h3 className="text-xs font-semibold md:text-xl">
-              Mau langsung tes psikologi?
+              Mau langsung skrining kesehatan mental?
             </h3>
             <Button className="mt-4 rounded-full bg-[--primary] px-3 py-1 text-xs uppercase text-white hover:bg-[--hover] md:px-6 md:py-3 md:text-base">
-              <Link href="/test">tes psikologi</Link>
+              <Link href="/test">tes sekarang</Link>
             </Button>
           </section>
           <Lottie

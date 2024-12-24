@@ -65,7 +65,7 @@ export default function NewsComponent() {
           Mahasiswa, sebagai kelompok usia yang cenderung belum memiliki
           kemampuan penuh dalam mengendalikan emosi, sering kali mengabaikan
           pentingnya kesehatan mental. Gangguan mental yang dialami dapat
-          memengaruhi suasana hati, mengurangikemampuan berpikir, dan
+          memengaruhi suasana hati, mengurangi kemampuan berpikir, dan
           menyebabkan kesulitan dalam mengelola emosi, yang pada akhirnya
           memengaruhi produktivitas dan kualitas hidup mereka.
         </p>

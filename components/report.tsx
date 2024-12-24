@@ -36,11 +36,24 @@ export default function ReportComponent() {
   const handleDownload = async () => {
     if (resultRef.current) {
       try {
+        // Set the width and height to simulate a desktop layout
+        const originalWidth = resultRef.current.style.width;
+        const originalHeight = resultRef.current.style.height;
+
+        // Set desired width and height for desktop layout
+        resultRef.current.style.width = "1200px"; // Example desktop width
+        resultRef.current.style.height = "auto"; // Adjust height automatically
+
+        // Wait for styles to apply and then capture the image
         const dataUrl = await toPng(resultRef.current);
         const link = document.createElement("a");
         link.href = dataUrl;
         link.download = "mental-test-report.png";
         link.click();
+
+        // Restore original width and height
+        resultRef.current.style.width = originalWidth;
+        resultRef.current.style.height = originalHeight;
       } catch (error) {
         console.error("Failed to download the image.", error);
       }
@@ -56,7 +69,7 @@ export default function ReportComponent() {
   }
 
   return (
-    <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center">
+    <div className="mx-auto mb-8 flex w-full max-w-screen-xl flex-col items-center justify-center">
       <div ref={resultRef} className="w-full bg-white p-4">
         <h1 className="mb-4 text-center text-xl font-bold uppercase md:text-2xl">
           HealthyMind Respati Report

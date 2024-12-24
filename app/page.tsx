@@ -6,10 +6,10 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="text-black">
-        <h1 className="mt-4 text-center text-4xl font-bold text-cyan-900 md:mt-0">
+        <h1 className="mt-4 px-4 text-center text-4xl font-bold text-cyan-900 md:mt-0 md:px-0">
           HealthyMind Respati
         </h1>
-        <p className="mt-2 text-center">
+        <p className="mt-2 px-4 text-center md:px-0">
           Selamat Datang di HealthyMind Respati
         </p>
       </header>
@@ -59,7 +59,7 @@ export default function Home() {
               Pada tahun 2021, sekitar 20% remaja dan mahasiswa Indonesia
               mengalami masalah kesehatan mental seperti kecemasan, depresi, dan
               stres berlebihan, menurut Kementerian Kesehatan Republik
-              Indonesia. Bahkan, angka pravelensi orang dengan gangguan mental
+              Indonesia. Bahkan, angka prevalensi orang dengan gangguan mental
               (depresi dan kecemasan) di Indonesia meningkat dari 6,0 menjadi
               9,8 per 1.000 orang berusia 15 tahun ke atas (Antari & Widyawati,
               2021).
@@ -78,7 +78,7 @@ export default function Home() {
 
         <section className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           <InfoCard
-            title="Mental Health Detector"
+            title="Skrining Kesehatan Mental"
             description="Lakukan penilaian kesehatan mental dengan cepat dan dapatkan umpan balik segera berdasarkan penelitian psikologi terbaru."
             icon="🧠"
           />
@@ -93,7 +93,7 @@ export default function Home() {
             icon="💬"
           />
           <InfoCard
-            title="Hasil Laporan"
+            title="Hasil Skrining Kesehatan Mental"
             description="Dapatkan laporan lengkap tentang kesehatan mental Anda berdasarkan penilaian dan konsultasi."
             icon="📊"
           />
