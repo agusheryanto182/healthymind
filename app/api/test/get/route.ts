@@ -15,7 +15,7 @@ export async function GET(req: Request) {
 
     await connectDB();
 
-    const tests = await Test.find({ userId: decoded.id });
+    const tests = await Test.find({ user_id: decoded.userId });
 
     if (!tests || tests.length === 0) {
       return NextResponse.json(
