@@ -191,7 +191,7 @@ export default function Page() {
                 <tr className="bg-gray-50">
                   <td className="border border-gray-300 p-4">Dopamin</td>
                   <td className="border border-gray-300 p-4">
-                    Fenilalanin diambah B12, asam folat.
+                    Fenilalanin ditambah B12, asam folat.
                   </td>
                   <td className="border border-gray-300 p-4">
                     Bit, kacang kedelai, almond, daging, telur, gandum.
