@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "Silahkan isi password"],
     },
+    avatar: {
+      type: String,
+      default: null,
+    },
     role: {
       type: String,
       enum: ["student", "consultant"],

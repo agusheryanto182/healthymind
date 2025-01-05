@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Label, TextInput } from "flowbite-react";
+import { Button, Checkbox, Label, TextInput } from "flowbite-react";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -11,15 +11,20 @@ import toast from "react-hot-toast";
 import Cookies from "js-cookie";
 
 export function ProfileComponent() {
-  // const [imageSrc, setImageSrc] = useState<string>("/assets/icons/profile.svg");
-  // const [isHovering, setIsHovering] = useState<boolean>(false);
+  const [imageSrc, setImageSrc] = useState<string>("/assets/icons/profile.svg");
+  const [isHovering, setIsHovering] = useState<boolean>(false);
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [nim, setNim] = useState<string>("");
   const [prodi, setProdi] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [loading, setIsLoading] = useState<boolean>(true);
-  // const [avatar, setAvatar] = useState<File | null>(null);
+  const [avatar, setAvatar] = useState<File | null>(null);
+  const [isVisiblePassword, setIsVisiblePassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setIsVisiblePassword((prev) => !prev);
+  };
 
   const router = useRouter();
   const { user: authUser } = useAuth();
@@ -33,55 +38,62 @@ export function ProfileComponent() {
       setNim(user.nim);
       setProdi(user.prodi);
       setIsLoading(false);
-      // setImageSrc(user.avatar || "assets/icons/profile.svg");
+      setImageSrc(user.avatar || "assets/icons/profile.svg");
     }
   }, [user]);
 
-  // const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const file = event.target.files?.[0];
-  //   if (file) {
-  //     const reader = new FileReader();
-  //     reader.onload = () => {
-  //       setImageSrc(reader.result as string);
-  //     };
-  //     reader.readAsDataURL(file);
-  //     setAvatar(file);
-  //   }
-  // };
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImageSrc(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+      setAvatar(file);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // const formData = new FormData();
-    // formData.append("name", name);
-    // formData.append("email", email);
-    // formData.append("nim", nim);
-    // formData.append("prodi", prodi);
-    // if (avatar) formData.append("avatar", avatar);
-    // if (password) formData.append("password", password);
+    const formData = new FormData();
+    if (name) formData.append("name", name);
+    if (email) formData.append("email", email);
+    if (nim) formData.append("nim", nim);
+    if (prodi) formData.append("prodi", prodi);
+    if (avatar) formData.append("avatar", avatar);
+    if (password) formData.append("password", password);
 
-    const userData = {
-      name,
-      email,
-      nim,
-      prodi,
-      password,
-    };
+    // const userData = {
+    //   name,
+    //   email,
+    //   nim,
+    //   prodi,
+    //   password,
+    // };
 
     try {
-      const response = await axios.patch(`/api/users/${user?.id}`, userData, {
+      const response = await axios.patch(`/api/users/${user?.id}`, formData, {
         headers: {
           Authorization: `Bearer ${Cookies.get("token")}`,
         },
       });
 
-      if (response.status === 200) {
+      if (response?.status === 200) {
         toast.success("Profil berhasil diperbarui");
         router.push("/profile");
       } else {
-        toast.error("Gagal memperbarui profil");
+        toast.error(response?.data?.error || "Gagal memperbarui profil");
       }
     } catch (err) {
-      toast.error("Gagal memperbarui profil");
+      if (err?.response?.data) {
+        toast.error(err.response.data.error || "Gagal memperbarui profil");
+      } else {
+        toast.error("Gagal memperbarui profil");
+      }
+      setImageSrc(user.avatar || "assets/icons/profile.svg");
+    } finally {
+      setAvatar(null);
     }
   };
   return (
@@ -93,34 +105,34 @@ export function ProfileComponent() {
           onSubmit={handleSubmit}
           className="flex w-full flex-col  justify-center gap-4 px-4 py-16 md:px-16"
         >
-          {/* <div
-        className="relative mx-auto"
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
-      > */}
-          {/* <label htmlFor="profile-image" className="cursor-pointer">
-          <Image
-            className="h-36 w-36 rounded-full object-cover"
-            src={imageSrc}
-            alt="Profile"
-            width={500}
-            height={500}
-          />
-          {isHovering && (
-            <div className="absolute inset-0 flex items-center justify-center rounded-full bg-black bg-opacity-50 text-white">
-              Ubah Foto
-            </div>
-          )}
-        </label> */}
+          <div
+            className="relative mx-auto"
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+          >
+            <label htmlFor="profile-image" className="cursor-pointer">
+              <Image
+                className="h-36 w-36 rounded-full object-cover"
+                src={imageSrc}
+                alt="Profile"
+                width={500}
+                height={500}
+              />
+              {isHovering && (
+                <div className="absolute inset-0 flex items-center justify-center rounded-full bg-black bg-opacity-50 text-white">
+                  Ubah Foto
+                </div>
+              )}
+            </label>
 
-          {/* <input
-          type="file"
-          accept="image/*"
-          id="profile-image"
-          className="hidden"
-          onChange={handleFileChange}
-        />
-      </div> */}
+            <input
+              type="file"
+              accept="image/*"
+              id="profile-image"
+              className="hidden"
+              onChange={handleFileChange}
+            />
+          </div>
           <div>
             <div className="mb-2 block">
               <Label
@@ -213,11 +225,24 @@ export function ProfileComponent() {
             </div>
             <TextInput
               id="password2"
-              type="password"
+              type={isVisiblePassword ? "text" : "password"}
               shadow
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
+          </div>
+          <div className="flex items-center gap-2">
+            <Checkbox
+              onChange={togglePasswordVisibility}
+              id="show-password-checkbox"
+              aria-label="Tampilkan password"
+            />
+            <Label
+              htmlFor="show-password-checkbox"
+              className="cursor-pointer text-white"
+            >
+              Tampilkan password
+            </Label>
           </div>
           <Button type="submit">Perbarui Data Diri</Button>
         </form>
