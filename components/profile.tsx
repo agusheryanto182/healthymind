@@ -111,13 +111,12 @@ export function ProfileComponent() {
             onMouseLeave={() => setIsHovering(false)}
           >
             <label htmlFor="profile-image" className="cursor-pointer">
-              <Image
+              <img
                 className="h-36 w-36 rounded-full object-cover"
                 src={imageSrc}
                 alt="Profile"
                 width={500}
                 height={500}
-                unoptimized
               />
               {isHovering && (
                 <div className="absolute inset-0 flex items-center justify-center rounded-full bg-black bg-opacity-50 text-white">

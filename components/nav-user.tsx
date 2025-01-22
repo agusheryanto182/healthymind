@@ -68,13 +68,12 @@ export function NavUser({
                   {userData?.name[0]}
                 </AvatarFallback>
               </Avatar> */}
-              <Image
+              <img
                 src={userData?.avatar || "/assets/icons/profile.svg"}
                 alt={userData?.name || "anonim"}
                 width={40}
                 height={40}
                 className="h-8 w-8 rounded-full object-cover"
-                unoptimized
               />
 
               <div className="grid flex-1 text-left text-sm leading-tight">
