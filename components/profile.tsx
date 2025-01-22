@@ -30,8 +30,6 @@ export function ProfileComponent() {
   const { user: authUser } = useAuth();
   const { user } = useUser(authUser?.id || "");
 
-  console.log(user);
-
   useEffect(() => {
     setIsLoading(true);
     if (user) {
@@ -119,6 +117,7 @@ export function ProfileComponent() {
                 alt="Profile"
                 width={500}
                 height={500}
+                unoptimized
               />
               {isHovering && (
                 <div className="absolute inset-0 flex items-center justify-center rounded-full bg-black bg-opacity-50 text-white">

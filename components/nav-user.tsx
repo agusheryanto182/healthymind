@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
+import Image from "next/image";
 
 import {
   CircleUser,
@@ -58,7 +59,7 @@ export function NavUser({
               size="lg"
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
-              <Avatar className="h-8 w-8 rounded-full">
+              {/* <Avatar className="h-8 w-8 rounded-full">
                 <AvatarImage
                   src={userData?.avatar || "/assets/icons/profile.svg"}
                   alt={userData?.name[0]}
@@ -66,7 +67,16 @@ export function NavUser({
                 <AvatarFallback className="rounded-lg">
                   {userData?.name[0]}
                 </AvatarFallback>
-              </Avatar>
+              </Avatar> */}
+              <Image
+                src={userData?.avatar || "/assets/icons/profile.svg"}
+                alt={userData?.name || "anonim"}
+                width={40}
+                height={40}
+                className="h-8 w-8 rounded-full object-cover"
+                unoptimized
+              />
+
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-semibold">
                   {userData?.name || "anonim"}
