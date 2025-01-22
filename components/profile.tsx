@@ -2,7 +2,6 @@
 
 import { Button, Checkbox, Label, TextInput } from "flowbite-react";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { useUser } from "@/hooks/useUser";

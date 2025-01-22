@@ -30,12 +30,12 @@ const data = {
   //   avatar: "https://github.com/shadcn.png",
   // },
   navMain: [
-    {
-      title: "Profil",
-      url: "/profile",
-      icon: UserPen,
-      isActive: true,
-    },
+    // {
+    //   title: "Profil",
+    //   url: "/profile",
+    //   icon: UserPen,
+    //   isActive: true,
+    // },
     {
       title: "Edukasi",
       url: "#",
