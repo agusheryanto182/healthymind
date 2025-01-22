@@ -4,11 +4,11 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ["healthymindrespati.my.id"],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "healthymindrespati.my.id",
+        pathname: "/uploads/**",
       },
     ],
   },
