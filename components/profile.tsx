@@ -30,6 +30,8 @@ export function ProfileComponent() {
   const { user: authUser } = useAuth();
   const { user } = useUser(authUser?.id || "");
 
+  console.log(user);
+
   useEffect(() => {
     setIsLoading(true);
     if (user) {
