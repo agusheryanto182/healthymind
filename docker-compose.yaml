@@ -21,6 +21,7 @@ services:
       context: .
       dockerfile: Dockerfile
     command: ["npm", "run", "worker"]
+    restart: always
     volumes:
       - .:/app
       - /app/node_modules
@@ -41,12 +42,21 @@ services:
       - MONGO_INITDB_DATABASE=${MONGO_INITDB_DATABASE}
     volumes:
       - mongodb_data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     command: ["mongod", "--auth", "--bind_ip_all"]
     healthcheck:
-      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      test:
+        [
+          "CMD",
+          "mongosh",
+          "admin",
+          "--eval",
+          "db.auth('${MONGO_USERNAME}', '${MONGO_PASSWORD}'); db.adminCommand('ping')",
+        ]
       interval: 10s
       timeout: 10s
       retries: 5
+    restart: always
 
 volumes:
   mongodb_data:

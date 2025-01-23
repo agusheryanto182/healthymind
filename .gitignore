@@ -42,3 +42,4 @@ dist
 .dist
 
 .vscode
+mongo-init.js
